@@ -126,7 +126,7 @@ $config['rest_auth'] = FALSE;
 | Note: If 'rest_auth' is set to 'session' then change 'auth_source' to the name of the session variable
 |
 */
-$config['auth_source'] = 'ldap';
+$config['auth_source'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -137,7 +137,7 @@ $config['auth_source'] = 'ldap';
 | requests etc), set to TRUE;
 |
 */
-$config['allow_auth_and_keys'] = TRUE;
+$config['allow_auth_and_keys'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -210,7 +210,7 @@ $config['auth_library_function'] = '';
 | Array of usernames and passwords for login, if ldap is configured this is ignored
 |
 */
-$config['rest_valid_logins'] = ['admin' => '1234'];
+$config['rest_valid_logins'] = [];
 
 /*
 |--------------------------------------------------------------------------
@@ -227,7 +227,7 @@ $config['rest_valid_logins'] = ['admin' => '1234'];
 |    restrict certain methods to IPs in your white-list
 |
 */
-$config['rest_ip_whitelist_enabled'] = FALSE;
+$config['rest_ip_whitelist_enabled'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -252,7 +252,13 @@ $config['rest_handle_exceptions'] = TRUE;
 | 127.0.0.1 and 0.0.0.0 are allowed by default
 |
 */
-$config['rest_ip_whitelist'] = '';
+$servidores = array();
+$servidores[] = '108.59.86.103';// AdMideteed
+$servidores[] = '104.197.205.136';// 1.Mideteed
+$servidores[] = '104.198.171.154';// 2.Mideteed
+$servidores[] = '104.154.208.130';// demo.mideteed
+$servidores[] = '130.211.183.152';// psu
+$config['rest_ip_whitelist'] = implode(',',$servidores);
 
 /*
 |--------------------------------------------------------------------------
@@ -523,7 +529,7 @@ $config['rest_ignore_http_accept'] = FALSE;
 | Hint: This is good for production environments
 |
 */
-$config['rest_ajax_only'] = FALSE;
+$config['rest_ajax_only'] =  FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -533,7 +539,7 @@ $config['rest_ajax_only'] = FALSE;
 | Language file to load from the language directory
 |
 */
-$config['rest_language'] = 'english';
+$config['rest_language'] = 'espanol';
 
 /*
 |--------------------------------------------------------------------------
